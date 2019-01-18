@@ -1,0 +1,25 @@
+Practical 00
+================================
+Sort
+by folding case : gsed 's/[^a-zA-Z]\+/\n/g' < wiki.txt | sort | uniq -c | sort -f
+by rhyming order : gsed 's/[^a-zA-Z]\+/\n/g' < wiki.txt | sort | rev | uniq -c | sort -nr | less
+
+
+'s/[^a-zA-Z]\+/\n/g'
+
+grep
+ggrep -c -E '[A-Z]' wiki.words
+This returns 92494. But grep is counting words like NABBI as one uppercase character.
+
+ggrep -E -o '[A-Z]' wiki.words | wc -l
+530682
+
+uppercase characters in the Somali Wikipedia
+
+ggrep -i -E -c '^[a-z][a-z][a-z][a-z]$' wiki.words
+There are 268896 four-letter words
+
+ggrep -i -E -c '^[^aeiou]+$' wiki.words
+This results in 27352 words. But most of them are junk - i.e. https and www
+
+
