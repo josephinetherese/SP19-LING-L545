@@ -20,6 +20,18 @@ ggrep -i -E -c '^[a-z][a-z][a-z][a-z]$' wiki.words
 There are 268896 four-letter words
 
 ggrep -i -E -c '^[^aeiou]+$' wiki.words
-This results in 27352 words. But most of them are junk - i.e. https and www
+This results in 27352 words with no vowels. But most of them are junk - i.e. https and www
 
+ggrep -i -E -c '^[^aeiou]*[aeiou][^aeiou]*$' wiki.words
+This results in 401726 words with one vowel.
+
+ggrep -i -E -c '^[^aeiou]*[aeiou][^aeiou]*[aeiou][^aeiou]$' wiki.words
+This resutls in 250712 words with two vowels.
+
+sed
+gsed 's/[^a-zA-Z]\+/\n/g' < wiki.txt | ggrep -i -E -o -c '^[^aeiou][^aeiou]+'
+This identifies 144106 word-initial consonant clusters
+
+gsed 's/[^a-zA-Z]\+/\n/g' < wiki.txt | ggrep -i -E -c '[^aeiou][^aeiou]+$'
+This results in identifying 86530 word-final consonant clusters.
 
