@@ -7,28 +7,28 @@ Multichar_Symbols
 
 %>                      ! Morfeemiraja
 %+                      ! Yhdyssanaraja (leksikaalinen puoli)
-%#                      ! Yhdyssanaraja 
+%#                      ! Yhdyssanaraja
 
-LEXICON Root 
+LEXICON Root
 
-Nouns  ; 
+Nouns  ;
 
-LEXICON Cmp 
+LEXICON Cmp
 
            # ;
 %<cmp%>%+:%# Nouns ;
 
 LEXICON 9  ! kala
 
-%<nom%>:    # ; 
+%<nom%>:    # ;
 %<gen%>:%>n Cmp ;
 
 LEXICON 10 ! koira
 
-%<nom%>:    # ; 
+%<nom%>:    # ;
 %<gen%>:%>n Cmp ;
 
-LEXICON Nouns 
+LEXICON Nouns
 
 kissa%<n%>:kissa 9 ;  ! "кошка", "cat"
 kala%<n%>:kala 9 ;    ! "рыба", "fish"

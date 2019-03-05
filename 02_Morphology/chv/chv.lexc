@@ -28,10 +28,23 @@ LEXICON PLURAL
 LEXICON N
 
 %<n%>: PLURAL ;
+%<n%>: SUBST ;
+%<n%>: DER-N ;
 
 LEXICON Nouns
 
-урам:урам N ;     ! "улица"
-пакча:пакча N ;   ! "сад"
-хула:хула N ;     ! "город"
-канаш:канаш N ;   ! "совет"
+урам:урам N ;     ! "улица", "street"
+пахча:пахча N ;   ! "сад", "garden"
+хула:хула N ;     ! "город", "city"
+канаш:канаш N ;   ! "совет", "council"
+тӗс:тӗс N ;       ! "вид", "aspect"
+патша:патша N ;   ! "царь", "tsar"
+куҫ:куҫ N ;       ! "глаз", "eye"
+
+LEXICON SUBST
+
+PLURAL ;
+
+LEXICON DER-N
+
+%<der_лӑх%>:%>л%{Ă%}х SUBST ;
